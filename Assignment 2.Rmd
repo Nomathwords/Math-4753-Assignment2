@@ -1,0 +1,47 @@
+---
+title: 'Ass 2'
+author: "Hunter DeVoe"
+date: '`r format(Sys.Date(),format="%A, %B %d, %Y")`'
+output: 
+  html_document:
+    df_print: paged
+    fig_caption: true
+    highlights: pygments
+    number_sections: no
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+```{r setup, include=FALSE, fig.align='center'}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Questions{}
+
+## Q1  
+
+### a) Given a pair of matched prints, what is the probability that an expert will fail to identify the match?
+
+Given a pair of matched prints, the probability that an expert will fail to identify a match is 7.88%.    
+
+### b) Given a pair of matched prints, what is the probability that a novice will fail to identify the match?  
+
+Given a pair of matched prints, the probability that a novice will fail to identify a match is 25.45%.  
+
+### c) Assume the study included 10 participants, 5 experts and 5 novices. Suppose that a pair of matched prints are presented to a randomly selected study participant and the participant fails to identify the match. Is the participant more likely to be an expert or a novice?  
+
+Though the odds of the study participant being an expert or a novice are $\frac{1}{2}$, if the randomly selected study participant fails to identify the match, they are likely, but not guaranteed, to be a novice, because a novice has less of a probability to identify a pair of matched prints than an expert.
+
+## Q2
+```{r}
+plot(1:10)
+```
+
+
+## Q3
+
+## Q4
+
+
+## Q5
