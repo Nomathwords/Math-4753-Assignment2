@@ -17,7 +17,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Questions{}
+# Questions
 
 ## Q1  
 
@@ -34,14 +34,41 @@ Given a pair of matched prints, the probability that a novice will fail to ident
 Though the odds of the study participant being an expert or a novice are $\frac{1}{2}$, if the randomly selected study participant fails to identify the match, they are likely, but not guaranteed, to be a novice, because a novice has less of a probability to identify a pair of matched prints than an expert.
 
 ## Q2
-```{r}
-plot(1:10)
-```
+
+### a)  Given the athlete is a user, find the probability that a drug test for testosterone will yield a positive result.
+
+$P(Positive | User) = \frac{50}{100} => 50%$  
+
+### b)  Given the athlete is a nonuser, find the probability that a drug test for testosterone will yield a negative result.
+
+$P(Negative | Nonuser) = \frac{891}{900} => 99%$  
+
+### c) If an athlete tests positive for testosterone, use Bayes’ Rule to find the probability that the athlete is really doping.
+
+$\frac{P(User \cap Positive)}{P(Positive)} = \frac{50}{59} => 84.70%$  
+
+## Q3  
+
+### a) Prove Theorem 3.1 in your own words  
+
+Assume we have $k$ sets of elements, $n_1$ through $n_k$, with k items in each set. We want to form a random sample by taking $m$ elements from each of the k sets. If each pull consists of $i$ steps, the first step can be performed in $s_1$ ways, the second step can be performed in $s_2$ ways, and so on. The $ith$ step is performed in $s_i$ ways. We can generalize the whole procedure to $s_1 * s_2 *...* s_i$ ways we can pull an element from a set, until we get $m$ elements.  
+
+## Q4  
+
+### a) Prove Theorem 3.2 in your own words  
+
+Assume we have a set of $N$ distinctly different elements, and we want to select $n$ elements from $N$ and arrange them in $n$ positions in a certain order. We take our first element $N_1$ and put it in the first position, leaving us with $N - 1$ choices for our second element. We then take $n_2$, leaving us with $n-2$ choices. We keep going and get the formula $N * (N-1) * (N-2) * ... * (N - n + 1)$, by the multiplicative rule we proved above. This formula equals $\frac{N!}{(N \space n)!}$, giving us the correct formula for the Permutations Rule.
 
 
-## Q3
-
-## Q4
 
 
-## Q5
+
+
+
+
+
+
+
+
+
+
