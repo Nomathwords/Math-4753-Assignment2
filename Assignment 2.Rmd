@@ -59,6 +59,36 @@ Assume we have $k$ sets of elements, $n_1$ through $n_k$, with k items in each s
 
 Assume we have a set of $N$ distinctly different elements, and we want to select $n$ elements from $N$ and arrange them in $n$ positions in a certain order. We take our first element $N_1$ and put it in the first position, leaving us with $N - 1$ choices for our second element. We then take $n_2$, leaving us with $n-2$ choices. We keep going and get the formula $N * (N-1) * (N-2) * ... * (N - n + 1)$, by the multiplicative rule we proved above. This formula equals $\frac{N!}{(N \space n)!}$, giving us the correct formula for the Permutations Rule.
 
+## Q5  
+
+### a) Prove Theorem 3.3 in your own words  
+
+Let $A$ be the number of partitions we can make out of a set of $N$ elements into $k$ sets. We know from Theorem 3.2 that $P_N^N = \frac{N!}{(N-N)!}$ We can rewrite this equality from Theorem 3.1: $P_N^N = A * n_1! * n_2! * ... * n_k!$, where $n_1!$ is the number of ways we can arrange the $n_1$ elements in position 1, $n_2$ is the number of ways we can arrange the $n_2$ elements in position 2, and so on. This can be rearranged to $A = \frac{N!}{n_1!n_2! ... n_k!}$, giving us the formula for the different number of partitions of $N$ elements in $k$ sets.
+
+## Q6  
+
+### Prove Theorem 3.4 in your own words
+
+We can use Theorem 3.3 as the base for Theorem 3.4. When a sample of elements is selected from a set, we are partitioning these elements into $k = 2$ groups. The first group is the set $n$ that was selected from the sample. The second group is the remaining $N - n$ set that has yet to be selected. By applying Theorem 3.3, we get the following formula: ${\frac{N!}{n!(N-n)!}} = {N \choose n}$ 
+
+## Q7
+
+### a) Verify that the probabilities for $Y$ in the table sum to 1  
+
+$p(0) = .09$, $p(1) = .30$, $p(2) = .37$, $p(3) = .20$, and $p(4) = .04$. Adding these up, $09 + .30 + .37 + .20 + .04 = 1$
+
+### b) Find the probability that three of four of the homes in the sample have a dust mite level that exceeds $2 \frac{\mu g}{g}$
+
+$P(3 \cup 4) = .24$  
+
+### c) Find the probability that fewer than two homes in the sample have a dust mite level that exceeds $2 \frac{\mu g}{g}$  
+
+$P(Y \leq 1) = .39$  
+
+## Q8
+
+
+
 
 
 
