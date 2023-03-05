@@ -87,18 +87,159 @@ $P(Y \leq 1) = .39$
 
 ## Q8
 
+### a) Show that the properties of a probability distribution for a discrete random variable are satisfied.
+
+I will first show that for all $0 \leq y \leq 20$, $0 \leq p(y) \leq 1$ by making a simple table of the data.  
+
+```{r}
+app <- read.csv("App.csv", header = TRUE, check.names = FALSE)
+app
+```
+
+After a quick glance, we can see that for every $y$ value, $p(y)$ lies between 0 and 1.  
+
+Next, I will check that $\sum \limits _{i = 1} ^{20} p(y)_i = 1$  
+
+```{r}
+sum(app$`p(y)`)
+```
+
+### b) Find $P(Y \geq 10)$  
+
+Since we are working with whole numbers, this can be transformed into a lower tail probability: $P(Y > 9)$, which equals $.02 + .02 + .02 + .02 + .01 + .01 + .01 + .01 + .01 + .005 + .005$ = $0.14$  
+
+Verify:  
+
+```{r}
+filteredApps <- subset(app, Apps > 9)
+sum(filteredApps$`p(y)`)
+```
+
+### c) Find the mean and variance of Y  
+
+Mean: $\mu = \sum \limits _{y = 0} ^ {20} y * p(y)$  
+
+Plug in: $(0 * .17) + (1 * .10) + (2 * .11) + (3 * .11) + (4 * .10) + (5 * .10) + (6 * .07) + (7 * .05) + (8 * .03) + (9 * .02) + (10 * .02) + (11 * .02) + (12 * .02) + (13 * .02) + (14 * .01) + (15 * .01) + (16 * .01) + (17 * .01) + (18 * .01) + (19 * .005) + (20 * .005) = 4.655$ 
+
+So, the mean of $Y = 4.655$
+
+Variance: $\sigma^2 = \sum \limits _{y = 0} ^{20} (y = \mu)^2 * p(y)$ 
+
+Plug in: $((0 - 4.655)^2 * (.17)) + ((1 - 4.655)^2 * (.10)) + ((2 - 4.655)^2 * (.11)) + ((3 - 4.655)^2 * (.11)) + ((4 - 4.655)^2 * (.10)) + ((5 - 4.655)^2 * (.10)) + ((6 - 4.655)^2 * (.07)) + ((7 - 4.655)^2 * (.05)) + ((8 - 4.655)^2 * (.03)) + ((9 - 4.655)^2 * (.02)) + ((10 - 4.655)^2 * (.02)) + ((11 - 4.655)^2 * (.02)) + ((12 - 4.655)^2 * (.02)) + ((13 - 4.655)^2 * (.02)) + ((14 - 4.655)^2 * (.01)) + ((15 - 4.655)^2 * (.01)) + ((16 - 4.655)^2 * (.01)) + ((17 - 4.655)^2 * (.01)) + ((18 - 4.655)^2 * (.01)) + ((19 - 4.655)^2 * (.005)) + ((20 - 4.655)^2 * (.005)) = 19.85597$
+
+So, the variance of $Y = 19.856$  
+
+Also, $\sigma = \sqrt{19.85597} = 4.456$  
+
+### d) Give an interval that will contain the value of $Y$ with a probability of at least .75  
+
+$$
+\begin{eqnarray}
+1 - \frac{1}{k^2} &=& 0.75 \\
+\frac{1}{k^2} &=& 1 - 0.75 \\
+k^2 &=& \frac{1}{0.25} \\
+k^2 &=& 4 \\
+k &=& 2
+\end{eqnarray}
+$$
+
+So, we know the interval $\mu \pm 2\sigma$ contains at least .75 of the probability.  
+
+$\mu + 2\sigma => 4.655 + 8.91 = 13.57$  
+
+$\mu - 2\sigma => 4.655 - 8.91 = -4.26$  
+
+Take the positive interval: $\mu + 2\sigma = 13.57$
+
+## Q9  
+
+### a) Find $P(Y = 10)$  
+
+$p(y) = {n \choose y} * p^y * q^{n-y}$  
+
+Plug in: ${25 \choose 10} * (0.7)^{10} * (0.3)^(15) = 0.001324897 $
+
+Verify:
+```{r}
+choose(25, 10) * (0.7^10) * (0.3^15)
+```
+
+n = 25
+Each trial results in a Y or N
+p = 0.7
+
+### b) Find $(P \leq 5)$  
+
+Transform into a lower tail: $P < 6$  
+
+$p(0) = {25 \choose 0} * 0.7^0 * 0.3^{25-0}$    
+$p(1) = {25 \choose 1} * 0.7^1 * 0.3^{25-1}$  
+$p(2) = {25 \choose 2} * 0.7^2 * 0.3^{25-2}$  
+$p(3) = {25 \choose 3} * 0.7^3 * 0.3^{25-3}$  
+$p(4) = {25 \choose 4} * 0.7^4 * 0.3^{25-4}$  
+$p(5) = {25 \choose 5} * 0.7^5 * 0.3^{25-5}$  
+
+Calculate:
+
+```{r}
+p0 <- choose(25, 0) * 0.7^0 * 0.3^25
+p1 <- choose(25, 1) * 0.7^1 * 0.3^24
+p2 <- choose(25, 2) * 0.7^2 * 0.3^23
+p3 <- choose(25, 3) * 0.7^3 * 0.3^22
+p4 <- choose(25, 4) * 0.7^4 * 0.3^21
+p5 <- choose(25, 5) * 0.7^5 * 0.3^20
+p0 
++ p1 + p2 + p3 + p4 + p5
+```
 
 
+### c) Find the mean $\mu$ and standard deviation $\sigma$ for $Y$
+
+$\mu = n * p$ = $25 * 0.7$ = $17.5$
+
+$\sigma^2 = n * p * q$ = $25 * 0.7 * 0.3$ = $5.25$  
+$\sigma = \sqrt{5.25}$ = $2.29$
+
+### d) Interpret the results, part c
+
+We can see that on average, about 17.5 foreign national students are randomly chosen from the set of 25 students that have earned their PhD.  
+
+The variance $\mu\pm 2.23\sigma$ contains the majority of our data.
+
+## Q10  
+
+### a) What is the probability that exactly 5 trains are assigned to each of the 10 tracks?  
+
+```{r}
+(factorial(50) / factorial(5) ^ 10) / 10^50
+```
+
+### b) A track is considered underutilized if fewer than 2 trains are assigned to the track during the day. Find the probability that Track #1 is underutilized.  
+
+```{r}
+9^{50} + (50 * (9^{49}))
+```
+
+## Q11
+
+### a) Give a formula for the probability distribution of $Y$.
+
+$p(y) = 0.60^{y - r} * 0.40$
+
+### b) What is $E(Y)$? Interpret the result.
+
+$E(Y) = \frac{1}{p} => \frac{1}{0.40} => 2.5$
 
 
+### c) Find $P(Y = 1)$
 
+$p(y) = 0.60^{1 - 1} * 0.40 = 0.40$
 
+### d) Find $P(Y > 2)$
 
+$1 - (P(Y = 1) + P(Y = 2))$  
 
+$1 - ((0.60^{2 - 1} * 0.40) + (0.60^{1 - 1} * 0.40)) = 0.36$
 
-
-
-
-
-
+## Q12
 

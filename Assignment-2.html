@@ -2781,7 +2781,7 @@ border-radius: 0px;
 
 <h1 class="title toc-ignore">Ass 2</h1>
 <h4 class="author">Hunter DeVoe</h4>
-<h4 class="date">Tuesday, February 21, 2023</h4>
+<h4 class="date">Saturday, March 04, 2023</h4>
 
 </div>
 
@@ -2847,9 +2847,249 @@ elements from each of the k sets. If each pull consists of <span class="math inl
 in <span class="math inline">\(s_1\)</span> ways, the second step can be
 performed in <span class="math inline">\(s_2\)</span> ways, and so on.
 The <span class="math inline">\(ith\)</span> step is performed in <span class="math inline">\(s_i\)</span> ways. We can generalize the whole
-procedure to <span class="math inline">\(s_1 * s_2 *...*
-s_i\)</span></p>
+procedure to <span class="math inline">\(s_1 * s_2 *...* s_i\)</span>
+ways we can pull an element from a set, until we get <span class="math inline">\(m\)</span> elements.</p>
 </div>
+</div>
+<div id="q4" class="section level2">
+<h2>Q4</h2>
+<div id="a-prove-theorem-3.2-in-your-own-words" class="section level3">
+<h3>a) Prove Theorem 3.2 in your own words</h3>
+<p>Assume we have a set of <span class="math inline">\(N\)</span>
+distinctly different elements, and we want to select <span class="math inline">\(n\)</span> elements from <span class="math inline">\(N\)</span> and arrange them in <span class="math inline">\(n\)</span> positions in a certain order. We take
+our first element <span class="math inline">\(N_1\)</span> and put it in
+the first position, leaving us with <span class="math inline">\(N -
+1\)</span> choices for our second element. We then take <span class="math inline">\(n_2\)</span>, leaving us with <span class="math inline">\(n-2\)</span> choices. We keep going and get the
+formula <span class="math inline">\(N * (N-1) * (N-2) * ... * (N - n +
+1)\)</span>, by the multiplicative rule we proved above. This formula
+equals <span class="math inline">\(\frac{N!}{(N \space n)!}\)</span>,
+giving us the correct formula for the Permutations Rule.</p>
+</div>
+</div>
+<div id="q5" class="section level2">
+<h2>Q5</h2>
+<div id="a-prove-theorem-3.3-in-your-own-words" class="section level3">
+<h3>a) Prove Theorem 3.3 in your own words</h3>
+<p>Let <span class="math inline">\(A\)</span> be the number of
+partitions we can make out of a set of <span class="math inline">\(N\)</span> elements into <span class="math inline">\(k\)</span> sets. We know from Theorem 3.2 that
+<span class="math inline">\(P_N^N = \frac{N!}{(N-N)!}\)</span> We can
+rewrite this equality from Theorem 3.1: <span class="math inline">\(P_N^N = A * n_1! * n_2! * ... * n_k!\)</span>,
+where <span class="math inline">\(n_1!\)</span> is the number of ways we
+can arrange the <span class="math inline">\(n_1\)</span> elements in
+position 1, <span class="math inline">\(n_2\)</span> is the number of
+ways we can arrange the <span class="math inline">\(n_2\)</span>
+elements in position 2, and so on. This can be rearranged to <span class="math inline">\(A = \frac{N!}{n_1!n_2! ... n_k!}\)</span>, giving
+us the formula for the different number of partitions of <span class="math inline">\(N\)</span> elements in <span class="math inline">\(k\)</span> sets.</p>
+</div>
+</div>
+<div id="q6" class="section level2">
+<h2>Q6</h2>
+<div id="prove-theorem-3.4-in-your-own-words" class="section level3">
+<h3>Prove Theorem 3.4 in your own words</h3>
+<p>We can use Theorem 3.3 as the base for Theorem 3.4. When a sample of
+elements is selected from a set, we are partitioning these elements into
+<span class="math inline">\(k = 2\)</span> groups. The first group is
+the set <span class="math inline">\(n\)</span> that was selected from
+the sample. The second group is the remaining <span class="math inline">\(N - n\)</span> set that has yet to be selected. By
+applying Theorem 3.3, we get the following formula: <span class="math inline">\({\frac{N!}{n!(N-n)!}} = {N \choose n}\)</span></p>
+</div>
+</div>
+<div id="q7" class="section level2">
+<h2>Q7</h2>
+<div id="a-verify-that-the-probabilities-for-y-in-the-table-sum-to-1" class="section level3">
+<h3>a) Verify that the probabilities for <span class="math inline">\(Y\)</span> in the table sum to 1</h3>
+<p><span class="math inline">\(p(0) = .09\)</span>, <span class="math inline">\(p(1) = .30\)</span>, <span class="math inline">\(p(2) = .37\)</span>, <span class="math inline">\(p(3) = .20\)</span>, and <span class="math inline">\(p(4) = .04\)</span>. Adding these up, <span class="math inline">\(09 + .30 + .37 + .20 + .04 = 1\)</span></p>
+</div>
+<div id="b-find-the-probability-that-three-of-four-of-the-homes-in-the-sample-have-a-dust-mite-level-that-exceeds-2-fracmu-gg" class="section level3">
+<h3>b) Find the probability that three of four of the homes in the
+sample have a dust mite level that exceeds <span class="math inline">\(2
+\frac{\mu g}{g}\)</span></h3>
+<p><span class="math inline">\(P(3 \cup 4) = .24\)</span></p>
+</div>
+<div id="c-find-the-probability-that-fewer-than-two-homes-in-the-sample-have-a-dust-mite-level-that-exceeds-2-fracmu-gg" class="section level3">
+<h3>c) Find the probability that fewer than two homes in the sample have
+a dust mite level that exceeds <span class="math inline">\(2 \frac{\mu
+g}{g}\)</span></h3>
+<p><span class="math inline">\(P(Y \leq 1) = .39\)</span></p>
+</div>
+</div>
+<div id="q8" class="section level2">
+<h2>Q8</h2>
+<div id="a-show-that-the-properties-of-a-probability-distribution-for-a-discrete-random-variable-are-satisfied." class="section level3">
+<h3>a) Show that the properties of a probability distribution for a
+discrete random variable are satisfied.</h3>
+<p>I will first show that for all <span class="math inline">\(0 \leq y
+\leq 20\)</span>, <span class="math inline">\(0 \leq p(y) \leq
+1\)</span> by making a simple table of the data.</p>
+<pre class="r"><code>app &lt;- read.csv(&quot;App.csv&quot;, header = TRUE, check.names = FALSE)
+app</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Apps"],"name":[1],"type":["int"],"align":["right"]},{"label":["p(y)"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"0","2":"0.170"},{"1":"1","2":"0.100"},{"1":"2","2":"0.110"},{"1":"3","2":"0.110"},{"1":"4","2":"0.100"},{"1":"5","2":"0.100"},{"1":"6","2":"0.070"},{"1":"7","2":"0.050"},{"1":"8","2":"0.030"},{"1":"9","2":"0.020"},{"1":"10","2":"0.020"},{"1":"11","2":"0.020"},{"1":"12","2":"0.020"},{"1":"13","2":"0.020"},{"1":"14","2":"0.010"},{"1":"15","2":"0.010"},{"1":"16","2":"0.010"},{"1":"17","2":"0.010"},{"1":"18","2":"0.010"},{"1":"19","2":"0.005"},{"1":"20","2":"0.005"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>After a quick glance, we can see that for every <span class="math inline">\(y\)</span> value, <span class="math inline">\(p(y)\)</span> lies between 0 and 1.</p>
+<p>Next, I will check that <span class="math inline">\(\sum \limits _{i
+= 1} ^{20} p(y)_i = 1\)</span></p>
+<pre class="r"><code>sum(app$`p(y)`)</code></pre>
+<pre><code>## [1] 1</code></pre>
+</div>
+<div id="b-find-py-geq-10" class="section level3">
+<h3>b) Find <span class="math inline">\(P(Y \geq 10)\)</span></h3>
+<p>Since we are working with whole numbers, this can be transformed into
+a lower tail probability: <span class="math inline">\(P(Y &gt;
+9)\)</span>, which equals <span class="math inline">\(.02 + .02 + .02 +
+.02 + .01 + .01 + .01 + .01 + .01 + .005 + .005\)</span> = <span class="math inline">\(0.14\)</span></p>
+<p>Verify:</p>
+<pre class="r"><code>filteredApps &lt;- subset(app, Apps &gt; 9)
+sum(filteredApps$`p(y)`)</code></pre>
+<pre><code>## [1] 0.14</code></pre>
+</div>
+<div id="c-find-the-mean-and-variance-of-y" class="section level3">
+<h3>c) Find the mean and variance of Y</h3>
+<p>Mean: <span class="math inline">\(\mu = \sum \limits _{y = 0} ^ {20}
+y * p(y)\)</span></p>
+<p>Plug in: <span class="math inline">\((0 * .17) + (1 * .10) + (2 *
+.11) + (3 * .11) + (4 * .10) + (5 * .10) + (6 * .07) + (7 * .05) + (8 *
+.03) + (9 * .02) + (10 * .02) + (11 * .02) + (12 * .02) + (13 * .02) +
+(14 * .01) + (15 * .01) + (16 * .01) + (17 * .01) + (18 * .01) + (19 *
+.005) + (20 * .005) = 4.655\)</span></p>
+<p>So, the mean of <span class="math inline">\(Y = 4.655\)</span></p>
+<p>Variance: <span class="math inline">\(\sigma^2 = \sum \limits _{y =
+0} ^{20} (y = \mu)^2 * p(y)\)</span></p>
+<p>Plug in: <span class="math inline">\(((0 - 4.655)^2 * (.17)) + ((1 -
+4.655)^2 * (.10)) + ((2 - 4.655)^2 * (.11)) + ((3 - 4.655)^2 * (.11)) +
+((4 - 4.655)^2 * (.10)) + ((5 - 4.655)^2 * (.10)) + ((6 - 4.655)^2 *
+(.07)) + ((7 - 4.655)^2 * (.05)) + ((8 - 4.655)^2 * (.03)) + ((9 -
+4.655)^2 * (.02)) + ((10 - 4.655)^2 * (.02)) + ((11 - 4.655)^2 * (.02))
++ ((12 - 4.655)^2 * (.02)) + ((13 - 4.655)^2 * (.02)) + ((14 - 4.655)^2
+* (.01)) + ((15 - 4.655)^2 * (.01)) + ((16 - 4.655)^2 * (.01)) + ((17 -
+4.655)^2 * (.01)) + ((18 - 4.655)^2 * (.01)) + ((19 - 4.655)^2 * (.005))
++ ((20 - 4.655)^2 * (.005)) = 19.85597\)</span></p>
+<p>So, the variance of <span class="math inline">\(Y =
+19.856\)</span></p>
+<p>Also, <span class="math inline">\(\sigma = \sqrt{19.85597} =
+4.456\)</span></p>
+</div>
+<div id="d-give-an-interval-that-will-contain-the-value-of-y-with-a-probability-of-at-least-.75" class="section level3">
+<h3>d) Give an interval that will contain the value of <span class="math inline">\(Y\)</span> with a probability of at least .75</h3>
+<p><span class="math display">\[
+\begin{eqnarray}
+1 - \frac{1}{k^2} &amp;=&amp; 0.75 \\
+\frac{1}{k^2} &amp;=&amp; 1 - 0.75 \\
+k^2 &amp;=&amp; \frac{1}{0.25} \\
+k^2 &amp;=&amp; 4 \\
+k &amp;=&amp; 2
+\end{eqnarray}
+\]</span></p>
+<p>So, we know the interval <span class="math inline">\(\mu \pm
+2\sigma\)</span> contains at least .75 of the probability.</p>
+<p><span class="math inline">\(\mu + 2\sigma =&gt; 4.655 + 8.91 =
+13.57\)</span></p>
+<p><span class="math inline">\(\mu - 2\sigma =&gt; 4.655 - 8.91 =
+-4.26\)</span></p>
+<p>Take the positive interval: <span class="math inline">\(\mu + 2\sigma
+= 13.57\)</span></p>
+</div>
+</div>
+<div id="q9" class="section level2">
+<h2>Q9</h2>
+<div id="a-find-py-10" class="section level3">
+<h3>a) Find <span class="math inline">\(P(Y = 10)\)</span></h3>
+<p><span class="math inline">\(p(y) = {n \choose y} * p^y *
+q^{n-y}\)</span></p>
+<p>Plug in: ${25 } * (0.7)^{10} * (0.3)^(15) = 0.001324897 $</p>
+<p>Verify:</p>
+<pre class="r"><code>choose(25, 10) * (0.7^10) * (0.3^15)</code></pre>
+<pre><code>## [1] 0.001324897</code></pre>
+<p>n = 25 Each trial results in a Y or N p = 0.7</p>
+</div>
+<div id="b-find-p-leq-5" class="section level3">
+<h3>b) Find <span class="math inline">\((P \leq 5)\)</span></h3>
+<p>Transform into a lower tail: <span class="math inline">\(P &lt;
+6\)</span></p>
+<p><span class="math inline">\(p(0) = {25 \choose 0} * 0.7^0 *
+0.3^{25-0}\)</span><br />
+<span class="math inline">\(p(1) = {25 \choose 1} * 0.7^1 *
+0.3^{25-1}\)</span><br />
+<span class="math inline">\(p(2) = {25 \choose 2} * 0.7^2 *
+0.3^{25-2}\)</span><br />
+<span class="math inline">\(p(3) = {25 \choose 3} * 0.7^3 *
+0.3^{25-3}\)</span><br />
+<span class="math inline">\(p(4) = {25 \choose 4} * 0.7^4 *
+0.3^{25-4}\)</span><br />
+<span class="math inline">\(p(5) = {25 \choose 5} * 0.7^5 *
+0.3^{25-5}\)</span></p>
+<p>Calculate:</p>
+<pre class="r"><code>p0 &lt;- choose(25, 0) * 0.7^0 * 0.3^25
+p1 &lt;- choose(25, 1) * 0.7^1 * 0.3^24
+p2 &lt;- choose(25, 2) * 0.7^2 * 0.3^23
+p3 &lt;- choose(25, 3) * 0.7^3 * 0.3^22
+p4 &lt;- choose(25, 4) * 0.7^4 * 0.3^21
+p5 &lt;- choose(25, 5) * 0.7^5 * 0.3^20
+p0 </code></pre>
+<pre><code>## [1] 8.472886e-14</code></pre>
+<pre class="r"><code>+ p1 + p2 + p3 + p4 + p5</code></pre>
+<pre><code>## [1] 3.457443e-07</code></pre>
+</div>
+<div id="c-find-the-mean-mu-and-standard-deviation-sigma-for-y" class="section level3">
+<h3>c) Find the mean <span class="math inline">\(\mu\)</span> and
+standard deviation <span class="math inline">\(\sigma\)</span> for <span class="math inline">\(Y\)</span></h3>
+<p><span class="math inline">\(\mu = n * p\)</span> = <span class="math inline">\(25 * 0.7\)</span> = <span class="math inline">\(17.5\)</span></p>
+<p><span class="math inline">\(\sigma^2 = n * p * q\)</span> = <span class="math inline">\(25 * 0.7 * 0.3\)</span> = <span class="math inline">\(5.25\)</span><br />
+<span class="math inline">\(\sigma = \sqrt{5.25}\)</span> = <span class="math inline">\(2.29\)</span></p>
+</div>
+<div id="d-interpret-the-results-part-c" class="section level3">
+<h3>d) Interpret the results, part c</h3>
+<p>We can see that on average, about 17.5 foreign national students are
+randomly chosen from the set of 25 students that have earned their
+PhD.</p>
+<p>The variance <span class="math inline">\(\mu\pm 2.23\sigma\)</span>
+contains the majority of our data.</p>
+</div>
+</div>
+<div id="q10" class="section level2">
+<h2>Q10</h2>
+<div id="a-what-is-the-probability-that-exactly-5-trains-are-assigned-to-each-of-the-10-tracks" class="section level3">
+<h3>a) What is the probability that exactly 5 trains are assigned to
+each of the 10 tracks?</h3>
+<pre class="r"><code>(factorial(50) / factorial(5) ^ 10) / 10^50</code></pre>
+<pre><code>## [1] 4.912046e-07</code></pre>
+</div>
+<div id="b-a-track-is-considered-underutilized-if-fewer-than-2-trains-are-assigned-to-the-track-during-the-day.-find-the-probability-that-track-1-is-underutilized." class="section level3">
+<h3>b) A track is considered underutilized if fewer than 2 trains are
+assigned to the track during the day. Find the probability that Track #1
+is underutilized.</h3>
+<pre class="r"><code>9^{50} + (50 * (9^{49}))</code></pre>
+<pre><code>## [1] 3.378586e+48</code></pre>
+</div>
+</div>
+<div id="q11" class="section level2">
+<h2>Q11</h2>
+<div id="a-give-a-formula-for-the-probability-distribution-of-y." class="section level3">
+<h3>a) Give a formula for the probability distribution of <span class="math inline">\(Y\)</span>.</h3>
+<p><span class="math inline">\(p(y) = 0.60^{y - r} * 0.40\)</span></p>
+</div>
+<div id="b-what-is-ey-interpret-the-result." class="section level3">
+<h3>b) What is <span class="math inline">\(E(Y)\)</span>? Interpret the
+result.</h3>
+<p><span class="math inline">\(E(Y) = \frac{1}{p} =&gt; \frac{1}{0.40}
+=&gt; 2.5\)</span></p>
+</div>
+<div id="c-find-py-1" class="section level3">
+<h3>c) Find <span class="math inline">\(P(Y = 1)\)</span></h3>
+<p><span class="math inline">\(p(y) = 0.60^{1 - 1} * 0.40 =
+0.40\)</span></p>
+</div>
+<div id="d-find-py-2" class="section level3">
+<h3>d) Find <span class="math inline">\(P(Y &gt; 2)\)</span></h3>
+<p><span class="math inline">\(1 - (P(Y = 1) + P(Y = 2))\)</span></p>
+<p><span class="math inline">\(1 - ((0.60^{2 - 1} * 0.40) + (0.60^{1 -
+1} * 0.40)) = 0.36\)</span></p>
+</div>
+</div>
+<div id="q12" class="section level2">
+<h2>Q12</h2>
 </div>
 </div>
 
