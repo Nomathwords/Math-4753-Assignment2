@@ -1,5 +1,5 @@
 ---
-title: 'Ass 2'
+title: 'Assignment 2'
 author: "Hunter DeVoe"
 date: '`r format(Sys.Date(),format="%A, %B %d, %Y")`'
 output: 
@@ -16,6 +16,8 @@ output:
 ```{r setup, include=FALSE, fig.align='center'}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+How many questions did you complete? 17/17
 
 # Questions
 
@@ -214,11 +216,9 @@ The variance $\mu\pm 2.23\sigma$ contains the majority of our data.
 (factorial(50) / factorial(5) ^ 10) / 10^50
 ```
 
-### b) A track is considered underutilized if fewer than 2 trains are assigned to the track during the day. Find the probability that Track #1 is underutilized.  
+### b) A track is considered underutilized if fewer than 2 trains are assigned to the track during the day. Find the probability that Track 1 is underutilized.  
 
-```{r}
-9^{50} + (50 * (9^{49}))
-```
+$9^{50} + (50 * (9^{49})) = 0.0338$
 
 ## Q11
 
@@ -243,3 +243,225 @@ $1 - ((0.60^{2 - 1} * 0.40) + (0.60^{1 - 1} * 0.40)) = 0.36$
 
 ## Q12
 
+### a) In a random sample of 10 of the 209 facilities, what is the expected number in the sample that treats hazardous waste on-site? Interpret this result.  
+
+$\mu = \frac{n*r}{N}$
+$\frac{10 * 8}{209} = 0.3828$
+
+### b) Find the probability that 4 of the 10 selected facilities treat hazardous waste on-site.  
+
+$p(y) = \frac{{r \choose y} * {N - r \choose n - y}}{N \choose n}$
+
+$\frac{{8 \choose 4} * {209 - 8 \choose 10 - 4}}{209 \choose 10} = 0.00017$
+
+## Q13
+
+### a) Find the variance of $Y$
+
+We are given the mean of the Poisson distribution: 0.03. We know that $\mu = \lambda$, and we also know that $\sigmaP^2 = \lambda$. Therefore, $\mu = \sigma^2 = 0.03$. So, the variance is 0.03.
+
+
+Y = 3
+E(Y) = 0.03
+
+$p(Y) = \frac{\lambda^y * e^{-\lambda}}{y!}$
+
+### b) Discuss the conditions that would make the researchers' Poisson assumption plausible.  
+
+1. The probability of observing an event over a very small interval is proportional to the size of the interval.  
+
+2. The probability of two events occurring in the same very small interval is extremely low.  
+
+3. The probability of an event in one interval does not change over other intervals with the same points.  
+
+4. The probability of an event in one interval is independent of the probability of an event in another disjoint interval.  
+
+### c) What is the probability that a deep-draft U.S. flag vessel will have no casualties in a 3-year time period?
+
+$p(Y) = \frac{\lambda^y * e^{-\lambda}}{y!}$  
+
+$\frac{0.03^0 * e^{-0.03}}{0!} = 0.9704$  
+
+## Q14
+
+### a) Find the value of $c$  
+
+$\int ^1 _0 c(2 - y) dy = 1$  
+
+Take the integral:  
+
+$c (2y - \frac{1}{2}y^2) |^2_0$
+
+Plug in bounds:  
+
+$[c (2(1) - \frac{1}{2}(1)^2)]$  
+
+Solve for c:  
+
+$\frac{3}{2}c = 1$ 
+
+$c = \frac{2}{3}$
+
+### b) Find the cumulative distribution function $F(y)$
+
+$F(y) = P(Y \leq y)$ = cdf of $Y\\$  
+
+When $y < 0$:
+
+$$
+\begin{eqnarray}
+F(y) &=& P(Y \leq y)\\  
+&=& 0
+\end{eqnarray}
+$$ 
+
+When $0 \leq y \leq 1$:
+
+$$
+\begin{eqnarray}
+F(y) &=& P(Y \leq y)\\  
+&=& \int ^y _0 c(2-y) dy\\
+F(y) &=& \frac{2}{3} (2y - y^2)\\
+\end{eqnarray}
+$$ 
+
+When $Y > 1$:  
+
+$$
+\begin{eqnarray}
+F(y) &=& P(Y \leq y)\\  
+&=& \int ^1 _0 f(y) dy\\
+&=& 1
+\end{eqnarray}
+$$ 
+
+### c) Compute $F(.4)$  
+
+$$
+\begin{eqnarray}
+F(0.4) &=& \frac{2}{3}(2(0.4) - (0.4)^2\\  
+&=& 0.4267
+\end{eqnarray}
+$$ 
+
+### d) Compute $P(.1 \leq Y \leq .6)$.  
+
+$$
+\begin{eqnarray}
+F(0.6) - F(0.1) &=& \frac{2}{3}(2(0.6) - (0.6)^2) - \frac{2}{3}(2(0.1) - (0.1)^2)\\  
+&=& \frac{2}{3}(2(0.6 - 0.1) - 0.6^2 + 0.1^2)
+&=& 0.434
+\end{eqnarray}
+$$ 
+
+## Q15  
+
+### a) Find the mean and variance of the amount of time in minutes the train is late.  
+
+$$
+\begin{eqnarray}
+\mu &=& E(Y)\\
+&=& \int ^5 _{-5} \frac{3}{500}y(25 - y^2) dy\\
+&=& \frac{3}{500} \int ^5 _{-5} (25y - y^3) dy\\
+&=& \frac{3}{500} * [\frac{25y^2}{2} - \frac{y^4}{4}]| ^5 _{-5}\\
+&=& 0
+\end{eqnarray}
+$$ 
+
+$$
+\begin{eqnarray}
+E(Y^2) &=& \int ^5 _{-5} \frac{3}{500}y^2(25 - y^2) dy\\
+&=& \frac{3}{500} \int ^5 _{-5} (25y^2 - y^4) dy\\
+&=& \frac{3}{500} * [\frac{25y^3}{3} - \frac{y^5}{5}]| ^5 _{-5}\\
+&=& \frac{3}{500} * [\frac{6250}{3} - \frac{6125}{5}]\\
+&=& 5
+\end{eqnarray}
+$$ 
+
+$$
+\begin{eqnarray}
+\sigma^2 &=& E(Y^2) - \mu^2\\
+&=& 5^ - 0\\
+\sigma &=& \sqrt{5}
+\end{eqnarray}
+$$
+
+So, Mean: $\mu = 0$, Variance: $\sigma^2 = 5$
+
+### b) Find the mean and variance of the amount of time in hours the train is late.  
+
+$\frac{\mu}{3600} = \frac{0}{3600} = 0$  
+
+$\frac{\sigma^2}{3600} = \frac{5}{3600} = 0.00138$  
+
+### c) Find the mean and variance of the amount of time in seconds the train is late
+
+$\mu * 3600 = 0* 3600 = 0$  
+
+$\\sigma^2 * 3600 = 5 * 3600 = 18000$  
+
+## Q16  
+
+### a) Exceeding 45 milligrams per liter  
+
+$P(Y > 45)
+
+```{r}
+1 - pnorm(45, 50, 3.2)
+```
+
+### b) Below 55 milligrams per liter  
+
+$P(Y < 55)$
+
+```{r}
+pnorm(55, 50, 3.2)
+```
+
+### c) Between 51 and 52 milligrams per liter  
+
+$P(51 \leq Y \leq 52)$
+
+```{r}
+pnorm(52, 50, 3.2) - pnorm(51, 50, 3.2)
+```
+
+## Q17  
+
+### a) Find the probability that the rating will fall between 500 and 700 points.
+
+$P(500 \leq Y \leq 700)$ 
+
+```{r}
+pnorm(700, 605, 185) - pnorm(500, 605, 185)
+```
+
+### b) Find the probability that the rating will fall between 400 and 500 points.  
+
+$P(400 \leq Y \leq 500)$
+
+```{r}
+pnorm(500, 605, 185) - pnorm(400, 605, 185)
+```
+
+### c) Find the probability that the rating will be less than 850 points.  
+
+$P(Y < 850)$  
+
+```{r}
+pnorm(850, 605, 185)
+```
+
+### d) Find the probability that the rating will exceed 1,000 points  
+
+$P(Y > 1000)$  
+
+```{r}
+1 - pnorm(1000, 605, 185)
+```
+
+### e) What rating will only 10% of the crash-tested cars exceed?  
+
+```{r}
+qnorm(0.9, 605, 185)
+```

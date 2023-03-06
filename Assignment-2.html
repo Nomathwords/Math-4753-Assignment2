@@ -12,7 +12,7 @@
 <meta name="author" content="Hunter DeVoe" />
 
 
-<title>Ass 2</title>
+<title>Assignment 2</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -2779,13 +2779,14 @@ border-radius: 0px;
 
 
 
-<h1 class="title toc-ignore">Ass 2</h1>
+<h1 class="title toc-ignore">Assignment 2</h1>
 <h4 class="author">Hunter DeVoe</h4>
-<h4 class="date">Saturday, March 04, 2023</h4>
+<h4 class="date">Sunday, March 05, 2023</h4>
 
 </div>
 
 
+<p>How many questions did you complete? 17/17</p>
 <div id="questions" class="section level1">
 <h1>Questions</h1>
 <div id="q1" class="section level2">
@@ -3058,10 +3059,10 @@ each of the 10 tracks?</h3>
 </div>
 <div id="b-a-track-is-considered-underutilized-if-fewer-than-2-trains-are-assigned-to-the-track-during-the-day.-find-the-probability-that-track-1-is-underutilized." class="section level3">
 <h3>b) A track is considered underutilized if fewer than 2 trains are
-assigned to the track during the day. Find the probability that Track #1
+assigned to the track during the day. Find the probability that Track 1
 is underutilized.</h3>
-<pre class="r"><code>9^{50} + (50 * (9^{49}))</code></pre>
-<pre><code>## [1] 3.378586e+48</code></pre>
+<p><span class="math inline">\(9^{50} + (50 * (9^{49})) =
+0.0338\)</span></p>
 </div>
 </div>
 <div id="q11" class="section level2">
@@ -3090,6 +3091,229 @@ result.</h3>
 </div>
 <div id="q12" class="section level2">
 <h2>Q12</h2>
+<div id="a-in-a-random-sample-of-10-of-the-209-facilities-what-is-the-expected-number-in-the-sample-that-treats-hazardous-waste-on-site-interpret-this-result." class="section level3">
+<h3>a) In a random sample of 10 of the 209 facilities, what is the
+expected number in the sample that treats hazardous waste on-site?
+Interpret this result.</h3>
+<p><span class="math inline">\(\mu = \frac{n*r}{N}\)</span> <span class="math inline">\(\frac{10 * 8}{209} = 0.3828\)</span></p>
+</div>
+<div id="b-find-the-probability-that-4-of-the-10-selected-facilities-treat-hazardous-waste-on-site." class="section level3">
+<h3>b) Find the probability that 4 of the 10 selected facilities treat
+hazardous waste on-site.</h3>
+<p><span class="math inline">\(p(y) = \frac{{r \choose y} * {N - r
+\choose n - y}}{N \choose n}\)</span></p>
+<p><span class="math inline">\(\frac{{8 \choose 4} * {209 - 8 \choose 10
+- 4}}{209 \choose 10} = 0.00017\)</span></p>
+</div>
+</div>
+<div id="q13" class="section level2">
+<h2>Q13</h2>
+<div id="a-find-the-variance-of-y" class="section level3">
+<h3>a) Find the variance of <span class="math inline">\(Y\)</span></h3>
+<p>We are given the mean of the Poisson distribution: 0.03. We know that
+<span class="math inline">\(\mu = \lambda\)</span>, and we also know
+that <span class="math inline">\(\sigmaP^2 = \lambda\)</span>.
+Therefore, <span class="math inline">\(\mu = \sigma^2 = 0.03\)</span>.
+So, the variance is 0.03.</p>
+<p>Y = 3 E(Y) = 0.03</p>
+<p><span class="math inline">\(p(Y) = \frac{\lambda^y *
+e^{-\lambda}}{y!}\)</span></p>
+</div>
+<div id="b-discuss-the-conditions-that-would-make-the-researchers-poisson-assumption-plausible." class="section level3">
+<h3>b) Discuss the conditions that would make the researchers’ Poisson
+assumption plausible.</h3>
+<ol style="list-style-type: decimal">
+<li><p>The probability of observing an event over a very small interval
+is proportional to the size of the interval.</p></li>
+<li><p>The probability of two events occurring in the same very small
+interval is extremely low.</p></li>
+<li><p>The probability of an event in one interval does not change over
+other intervals with the same points.</p></li>
+<li><p>The probability of an event in one interval is independent of the
+probability of an event in another disjoint interval.</p></li>
+</ol>
+</div>
+<div id="c-what-is-the-probability-that-a-deep-draft-u.s.-flag-vessel-will-have-no-casualties-in-a-3-year-time-period" class="section level3">
+<h3>c) What is the probability that a deep-draft U.S. flag vessel will
+have no casualties in a 3-year time period?</h3>
+<p><span class="math inline">\(p(Y) = \frac{\lambda^y *
+e^{-\lambda}}{y!}\)</span></p>
+<p><span class="math inline">\(\frac{0.03^0 * e^{-0.03}}{0!} =
+0.9704\)</span></p>
+</div>
+</div>
+<div id="q14" class="section level2">
+<h2>Q14</h2>
+<div id="a-find-the-value-of-c" class="section level3">
+<h3>a) Find the value of <span class="math inline">\(c\)</span></h3>
+<p><span class="math inline">\(\int ^1 _0 c(2 - y) dy = 1\)</span></p>
+<p>Take the integral:</p>
+<p><span class="math inline">\(c (2y - \frac{1}{2}y^2)
+|^2_0\)</span></p>
+<p>Plug in bounds:</p>
+<p><span class="math inline">\([c (2(1) -
+\frac{1}{2}(1)^2)]\)</span></p>
+<p>Solve for c:</p>
+<p><span class="math inline">\(\frac{3}{2}c = 1\)</span></p>
+<p><span class="math inline">\(c = \frac{2}{3}\)</span></p>
+</div>
+<div id="b-find-the-cumulative-distribution-function-fy" class="section level3">
+<h3>b) Find the cumulative distribution function <span class="math inline">\(F(y)\)</span></h3>
+<p><span class="math inline">\(F(y) = P(Y \leq y)\)</span> = cdf of
+<span class="math inline">\(Y\\\)</span></p>
+<p>When <span class="math inline">\(y &lt; 0\)</span>:</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+F(y) &amp;=&amp; P(Y \leq y)\\  
+&amp;=&amp; 0
+\end{eqnarray}
+\]</span></p>
+<p>When <span class="math inline">\(0 \leq y \leq 1\)</span>:</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+F(y) &amp;=&amp; P(Y \leq y)\\  
+&amp;=&amp; \int ^y _0 c(2-y) dy\\
+F(y) &amp;=&amp; \frac{2}{3} (2y - y^2)\\
+\end{eqnarray}
+\]</span></p>
+<p>When <span class="math inline">\(Y &gt; 1\)</span>:</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+F(y) &amp;=&amp; P(Y \leq y)\\  
+&amp;=&amp; \int ^1 _0 f(y) dy\\
+&amp;=&amp; 1
+\end{eqnarray}
+\]</span></p>
+</div>
+<div id="c-compute-f.4" class="section level3">
+<h3>c) Compute <span class="math inline">\(F(.4)\)</span></h3>
+<p><span class="math display">\[
+\begin{eqnarray}
+F(0.4) &amp;=&amp; \frac{2}{3}(2(0.4) - (0.4)^2\\  
+&amp;=&amp; 0.4267
+\end{eqnarray}
+\]</span></p>
+</div>
+<div id="d-compute-p.1-leq-y-leq-.6." class="section level3">
+<h3>d) Compute <span class="math inline">\(P(.1 \leq Y \leq
+.6)\)</span>.</h3>
+<p><span class="math display">\[
+\begin{eqnarray}
+F(0.6) - F(0.1) &amp;=&amp; \frac{2}{3}(2(0.6) - (0.6)^2) -
+\frac{2}{3}(2(0.1) - (0.1)^2)\\  
+&amp;=&amp; \frac{2}{3}(2(0.6 - 0.1) - 0.6^2 + 0.1^2)
+&amp;=&amp; 0.434
+\end{eqnarray}
+\]</span></p>
+</div>
+</div>
+<div id="q15" class="section level2">
+<h2>Q15</h2>
+<div id="a-find-the-mean-and-variance-of-the-amount-of-time-in-minutes-the-train-is-late." class="section level3">
+<h3>a) Find the mean and variance of the amount of time in minutes the
+train is late.</h3>
+<p><span class="math display">\[
+\begin{eqnarray}
+\mu &amp;=&amp; E(Y)\\
+&amp;=&amp; \int ^5 _{-5} \frac{3}{500}y(25 - y^2) dy\\
+&amp;=&amp; \frac{3}{500} \int ^5 _{-5} (25y - y^3) dy\\
+&amp;=&amp; \frac{3}{500} * [\frac{25y^2}{2} - \frac{y^4}{4}]| ^5
+_{-5}\\
+&amp;=&amp; 0
+\end{eqnarray}
+\]</span></p>
+<p><span class="math display">\[
+\begin{eqnarray}
+E(Y^2) &amp;=&amp; \int ^5 _{-5} \frac{3}{500}y^2(25 - y^2) dy\\
+&amp;=&amp; \frac{3}{500} \int ^5 _{-5} (25y^2 - y^4) dy\\
+&amp;=&amp; \frac{3}{500} * [\frac{25y^3}{3} - \frac{y^5}{5}]| ^5
+_{-5}\\
+&amp;=&amp; \frac{3}{500} * [\frac{6250}{3} - \frac{6125}{5}]\\
+&amp;=&amp; 5
+\end{eqnarray}
+\]</span></p>
+<p><span class="math display">\[
+\begin{eqnarray}
+\sigma^2 &amp;=&amp; E(Y^2) - \mu^2\\
+&amp;=&amp; 5^ - 0\\
+\sigma &amp;=&amp; \sqrt{5}
+\end{eqnarray}
+\]</span></p>
+<p>So, Mean: <span class="math inline">\(\mu = 0\)</span>, Variance:
+<span class="math inline">\(\sigma^2 = 5\)</span></p>
+</div>
+<div id="b-find-the-mean-and-variance-of-the-amount-of-time-in-hours-the-train-is-late." class="section level3">
+<h3>b) Find the mean and variance of the amount of time in hours the
+train is late.</h3>
+<p><span class="math inline">\(\frac{\mu}{3600} = \frac{0}{3600} =
+0\)</span></p>
+<p><span class="math inline">\(\frac{\sigma^2}{3600} = \frac{5}{3600} =
+0.00138\)</span></p>
+</div>
+<div id="c-find-the-mean-and-variance-of-the-amount-of-time-in-seconds-the-train-is-late" class="section level3">
+<h3>c) Find the mean and variance of the amount of time in seconds the
+train is late</h3>
+<p><span class="math inline">\(\mu * 3600 = 0* 3600 = 0\)</span></p>
+<p><span class="math inline">\(\\sigma^2 * 3600 = 5 * 3600 =
+18000\)</span></p>
+</div>
+</div>
+<div id="q16" class="section level2">
+<h2>Q16</h2>
+<div id="a-exceeding-45-milligrams-per-liter" class="section level3">
+<h3>a) Exceeding 45 milligrams per liter</h3>
+<p>$P(Y &gt; 45)</p>
+<pre class="r"><code>1 - pnorm(45, 50, 3.2)</code></pre>
+<pre><code>## [1] 0.9409149</code></pre>
+</div>
+<div id="b-below-55-milligrams-per-liter" class="section level3">
+<h3>b) Below 55 milligrams per liter</h3>
+<p><span class="math inline">\(P(Y &lt; 55)\)</span></p>
+<pre class="r"><code>pnorm(55, 50, 3.2)</code></pre>
+<pre><code>## [1] 0.9409149</code></pre>
+</div>
+<div id="c-between-51-and-52-milligrams-per-liter" class="section level3">
+<h3>c) Between 51 and 52 milligrams per liter</h3>
+<p><span class="math inline">\(P(51 \leq Y \leq 52)\)</span></p>
+<pre class="r"><code>pnorm(52, 50, 3.2) - pnorm(51, 50, 3.2)</code></pre>
+<pre><code>## [1] 0.1113448</code></pre>
+</div>
+</div>
+<div id="q17" class="section level2">
+<h2>Q17</h2>
+<div id="a-find-the-probability-that-the-rating-will-fall-between-500-and-700-points." class="section level3">
+<h3>a) Find the probability that the rating will fall between 500 and
+700 points.</h3>
+<p><span class="math inline">\(P(500 \leq Y \leq 700)\)</span></p>
+<pre class="r"><code>pnorm(700, 605, 185) - pnorm(500, 605, 185)</code></pre>
+<pre><code>## [1] 0.4110396</code></pre>
+</div>
+<div id="b-find-the-probability-that-the-rating-will-fall-between-400-and-500-points." class="section level3">
+<h3>b) Find the probability that the rating will fall between 400 and
+500 points.</h3>
+<p><span class="math inline">\(P(400 \leq Y \leq 500)\)</span></p>
+<pre class="r"><code>pnorm(500, 605, 185) - pnorm(400, 605, 185)</code></pre>
+<pre><code>## [1] 0.1512568</code></pre>
+</div>
+<div id="c-find-the-probability-that-the-rating-will-be-less-than-850-points." class="section level3">
+<h3>c) Find the probability that the rating will be less than 850
+points.</h3>
+<p><span class="math inline">\(P(Y &lt; 850)\)</span></p>
+<pre class="r"><code>pnorm(850, 605, 185)</code></pre>
+<pre><code>## [1] 0.9073023</code></pre>
+</div>
+<div id="d-find-the-probability-that-the-rating-will-exceed-1000-points" class="section level3">
+<h3>d) Find the probability that the rating will exceed 1,000
+points</h3>
+<p><span class="math inline">\(P(Y &gt; 1000)\)</span></p>
+<pre class="r"><code>1 - pnorm(1000, 605, 185)</code></pre>
+<pre><code>## [1] 0.01637499</code></pre>
+</div>
+<div id="e-what-rating-will-only-10-of-the-crash-tested-cars-exceed" class="section level3">
+<h3>e) What rating will only 10% of the crash-tested cars exceed?</h3>
+<pre class="r"><code>qnorm(0.9, 605, 185)</code></pre>
+<pre><code>## [1] 842.087</code></pre>
+</div>
 </div>
 </div>
 
